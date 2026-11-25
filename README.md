@@ -1,5 +1,7 @@
 # QuantPreflight & Strategy-Audit MCP (`quant-preflight-mcp`)
 
+🌐 **Language**: English | [한국어 사용자 설명서 (Korean Guide)](./README_KO.md)
+
 > **Stop Letting AI Agents Guess Orderbook Slippage, Overbet Kelly Fractions, and Stack Redundant Indicators.**  
 > Real-time L2 VWAP book-walk execution drag, cross-venue perpetual microstructure, Ridge-stabilized VIF + Modified Gram-Schmidt feature orthogonalization, and 5,000-path Monte Carlo ruin audits — delivered via **Stateless MCP** at **$0.008–$0.025 per verified call** instead of **$379/month** institutional data terminals.
 
@@ -22,30 +24,40 @@ Autonomous trading bots and AI coding assistants (Claude, Cursor, ChatGPT) routi
 
 ---
 
-## Fold 2 — One-Click MCP Connection Snippets (Claude · Cursor · ChatGPT)
+## Fold 2 — 60-Second Setup for Any AI Client (No Coding Needed)
 
-### A. Connect via Apify Hosted Standby MCP (`mcp.apify.com` / Actor Standby URL)
-Add the following block to `claude_desktop_config.json` (Claude Desktop) or `.cursor/mcp.json` (Cursor):
+Works out-of-the-box via **Streamable HTTP (`/mcp`)** with **Cursor (Free & Pro)**, **Claude Desktop**, **Antigravity IDE**, **VS Code (Copilot / Cline / Roo Code)**, and **ChatGPT**—plus one-click batch runs inside the **Apify Console**.
+
+### Option A: Connect via Apify Standby MCP URL (Recommended)
+Copy your Actor's Standby URL from **Apify Console → Actor → Settings → Standby** and paste this into your AI client's MCP config (`~/.cursor/mcp.json`, `claude_desktop_config.json`, or `~/.gemini/config/mcp_config.json`):
 
 ```json
 {
   "mcpServers": {
     "quant-preflight": {
-      "url": "https://YOUR-USERNAME--quant-preflight-mcp.apify.actor/mcp",
+      "url": "https://<YOUR_APIFY_USERNAME>--quant-preflight-mcp.apify.actor/mcp",
       "headers": {
-        "Authorization": "Bearer YOUR_APIFY_API_TOKEN"
+        "Authorization": "Bearer <YOUR_APIFY_API_TOKEN>"
       }
     }
   }
 }
 ```
 
-### B. Connect via Local / Self-Hosted Stateless HTTP (`MCPize` Compatible)
+### Option B: Run Locally or on MCPize (`LOCAL_STANDALONE=true`)
 ```bash
 LOCAL_STANDALONE=true PORT=3000 npm start
 # Readiness probe: GET http://localhost:3000/health -> {"status":"ok","mode":"multi-tenant"}
 # Stateless MCP endpoint: POST http://localhost:3000/mcp
 ```
+
+### Copy-Paste Prompts to Try Immediately
+Once connected, ask your AI assistant any of these plain-English prompts:
+- **Pre-Trade Slippage & ATR Stop**: *"Use `preflight_execution_risk` to check L2 slippage, round-trip fee drag, and 1h ATR stop distances for a $25,000 BTC market buy."*
+- **Cross-Asset / Failover Check**: *"Run `preflight_execution_risk` on `NVDAUSDT` for a $10,000 buy to inspect live spread and 1h ATR volatility."* (Automatically fails over to OKX Swap v5 if unlisted on Hyperliquid.)
+- **Market Scanner**: *"Call `scan_venue_microstructure` for the top 10 perpetual pairs sorted by annualized funding APR%."*
+- **Indicator Overfitting Audit**: *"Use `audit_indicator_collinearity` on BTC 1h candles with `sma_5`, `sma_20`, `ema_12`, `rsi_14`, `bb_upper`, `atr_14` to check VIF and orthogonal weights."*
+- **5,000-Path Reality Check**: *"Run `simulate_backtest_reality` for a 52% win rate, 0.8% avg win, 0.5% avg loss, 1.5% risk/trade over 250 trades with live BTC L2 slippage."*
 
 ---
 
