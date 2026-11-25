@@ -12,7 +12,6 @@ interface BatchConsoleInput {
 function isStandbyOrServerMode(): boolean {
   if (process.env.LOCAL_STANDALONE === 'true') return true;
   if (process.env.APIFY_META_ORIGIN === 'STANDBY') return true;
-  if (process.env.ACTOR_STANDBY_PORT || process.env.ACTOR_WEB_SERVER_PORT) return true;
   return false;
 }
 
