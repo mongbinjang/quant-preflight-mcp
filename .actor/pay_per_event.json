@@ -1,0 +1,22 @@
+{
+  "preflight-execution-risk": {
+    "eventTitle": "Pre-Trade L2 Execution & Risk Check",
+    "eventDescription": "Live multi-venue L2 book-walk slippage, fee+funding drag, ATR stop, and Half-Kelly sizing.",
+    "eventPriceUsd": 0.008
+  },
+  "scan-venue-microstructure": {
+    "eventTitle": "Cross-Venue Microstructure Snapshot",
+    "eventDescription": "Normalized funding rate, open interest, spread, and liquidity depth across top perp pairs.",
+    "eventPriceUsd": 0.010
+  },
+  "audit-indicator-collinearity": {
+    "eventTitle": "Indicator Collinearity & Orthogonalization Audit",
+    "eventDescription": "Deterministic VIF, Condition Number, and Gram-Schmidt orthogonal weights via quantEngine.",
+    "eventPriceUsd": 0.025
+  },
+  "simulate-backtest-reality": {
+    "eventTitle": "Backtest Fee-Drag & Monte Carlo Ruin Audit",
+    "eventDescription": "Realistic slippage/fee decay curve and 5,000-path Monte Carlo Risk-of-Ruin simulation.",
+    "eventPriceUsd": 0.025
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "title": "QuantPreflight & Strategy-Audit MCP (One-Shot Console Input)",
+  "type": "object",
+  "schemaVersion": 1,
+  "description": "In Standby / MCP mode, connect directly to POST /mcp. For one-shot Apify Console runs, select one of the 4 deterministic quantitative tools and pass its JSON parameters. Recommended minimalMaxTotalChargeUsd: 0.05 (256MB-512MB RAM, 120-180s idle timeout).",
+  "properties": {
+    "tool": {
+      "title": "MCP Tool to Execute",
+      "type": "string",
+      "description": "Select which of the 4 frozen quantitative audit tools to run.",
+      "enum": [
+        "preflight_execution_risk",
+        "scan_venue_microstructure",
+        "audit_indicator_collinearity",
+        "simulate_backtest_reality"
+      ],
+      "default": "scan_venue_microstructure",
+      "editor": "select"
+    },
+    "params": {
+      "title": "Tool Input Parameters (JSON)",
+      "type": "object",
+      "description": "JSON arguments matching the selected MCP tool's Zod schema.",
+      "editor": "json",
+      "default": {
+        "limit": 5,
+        "sort_by": "open_interest_usd"
+      }
+    }
+  },
+  "required": ["tool"]
+}

@@ -1,0 +1,10 @@
+{
+  "actorSpecification": 1,
+  "name": "quant-preflight-mcp",
+  "title": "QuantPreflight & Strategy-Audit MCP",
+  "version": "1.0",
+  "usesStandbyMode": true,
+  "webServerMcpPath": "/mcp",
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile"
+}
