@@ -1,15 +1,14 @@
 {
-  "actorSpecification": 1,
-  "fields": {
-    "status": {
+  "actorOutputSchemaVersion": 1,
+  "title": "QuantPreflight & Strategy-Audit MCP Output Schema",
+  "description": "Structured non-advisory quantitative analytics output saved to the default Apify dataset during one-shot runs.",
+  "type": "object",
+  "properties": {
+    "results": {
       "type": "string",
-      "title": "Execution Status",
-      "description": "Result of the MCP or risk calculation"
-    },
-    "data": {
-      "type": "object",
-      "title": "Risk Analytics Output",
-      "description": "Deterministic quantitative analytics payload"
+      "title": "Quantitative Audit Results (Dataset)",
+      "description": "JSON dataset items containing tool name, error flag, non-advisory metadata, and deterministic L2/ATR/collinearity/Monte Carlo outputs.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
     }
   }
 }
