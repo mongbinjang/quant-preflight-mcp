@@ -28,8 +28,8 @@ Autonomous trading bots and AI coding assistants (Claude, Cursor, ChatGPT) routi
 
 Works out-of-the-box via **Streamable HTTP (`/mcp`)** with **Cursor (Free & Pro)**, **Claude Desktop**, **Antigravity IDE**, **VS Code (Copilot / Cline / Roo Code)**, and **ChatGPT**—plus one-click batch runs inside the **Apify Console**.
 
-### Option A: Connect via Apify Standby MCP URL (Recommended)
-Copy your Actor's Standby URL from **Apify Console → Actor → Settings → Standby** and paste this into your AI client's MCP config (`~/.cursor/mcp.json`, `claude_desktop_config.json`, or `~/.gemini/config/mcp_config.json`):
+### Option A: Connect via Apify Server (MCP) URL (Recommended)
+Copy your Actor's Server URL from **Apify Console → Actor → `Server` tab** (or **Settings → Server**) and paste this into your AI client's MCP config (`~/.cursor/mcp.json`, `claude_desktop_config.json`, or `~/.gemini/config/mcp_config.json`):
 
 ```json
 {

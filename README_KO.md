@@ -24,8 +24,8 @@
 
 최신 **Streamable HTTP (`/mcp`)** 표준을 지원하므로 **Cursor(무료/유료)**, **Antigravity IDE**, **Claude Desktop**, **VS Code(Copilot / Cline / Roo Code)**, **ChatGPT** 어디서나 바로 연결되며, **Apify 콘솔 내 `Input → Start`** 버튼으로도 1회성 실행이 가능합니다.
 
-### 방법 A: Apify Standby MCP 주소로 연결 (추천)
-Apify 콘솔(`Actor → Settings → Standby`)에서 확인한 본인 Standby URL을 AI 클라이언트 MCP 설정 파일(`~/.cursor/mcp.json`, `~/.gemini/config/mcp_config.json`, `claude_desktop_config.json`)에 붙여넣으세요:
+### 방법 A: Apify Server (MCP) 주소로 연결 (추천)
+Apify 콘솔(`Actor → 상단 Server 탭` 또는 `Settings → Server`)에서 확인한 본인 서버 URL을 AI 클라이언트 MCP 설정 파일(`~/.cursor/mcp.json`, `~/.gemini/config/mcp_config.json`, `claude_desktop_config.json`)에 붙여넣으세요:
 
 ```json
 {
