@@ -1,0 +1,15 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "status": {
+      "type": "string",
+      "title": "Execution Status",
+      "description": "Result of the MCP or risk calculation"
+    },
+    "data": {
+      "type": "object",
+      "title": "Risk Analytics Output",
+      "description": "Deterministic quantitative analytics payload"
+    }
+  }
+}
